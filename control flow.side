@@ -1,0 +1,152 @@
+{
+  "id": "35f9cb74-2aae-44f4-8567-5ddd5f047cf3",
+  "version": "2.0",
+  "name": "control flow",
+  "url": "http://the-internet.herokuapp.com",
+  "tests": [{
+    "id": "f0ec0de3-a50b-4170-9ede-b123369f64a0",
+    "name": "loops",
+    "commands": [{
+      "id": "52a1669d-a82d-466a-bb6c-4b726aee1f73",
+      "comment": "",
+      "command": "open",
+      "target": "/add_remove_elements/9",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9270d610-8c67-489a-b937-be694e6fa313",
+      "comment": "",
+      "command": "while",
+      "target": "document.querySelectorAll('#elements button').length",
+      "targets": [],
+      "value": "10"
+    }, {
+      "id": "a92a435d-d928-4f0b-9994-9664b8d4614c",
+      "comment": "",
+      "command": "click",
+      "target": "css=#elements > button:nth-child(1)",
+      "targets": [
+        ["css=#elements > button:nth-child(1)", "css:finder"],
+        ["xpath=//button[@onclick='deleteElement()']", "xpath:attributes"],
+        ["xpath=//div[@id='elements']/button", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Delete')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "414506ac-b4e0-4b6f-ae18-cad0a97c4895",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e3dc2aa1-cdff-4879-92a4-766b5704d687",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=#elements > button:nth-child(1)",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0373d8bd-bb79-4cc0-bd66-3e16824f4cda",
+    "name": "conditionals",
+    "commands": [{
+      "id": "efcc4b06-4a30-49ac-b560-ae057f58f566",
+      "comment": "",
+      "command": "open",
+      "target": "/entry_ad",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "738e1c55-a03a-4a78-b615-99624be57b98",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd6eb653-c37f-43d1-b37f-e4eb15e5f8ed",
+      "comment": "",
+      "command": "if",
+      "target": "document.querySelector('#modal') && document.querySelector('#modal').offsetHeight !== 0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c7c56a9-20be-4ea8-ba3b-7aeb58cc74d2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.modal-footer > p",
+      "targets": [
+        ["css=.modal-footer > p", "css:finder"],
+        ["xpath=//div[@id='modal']/div[2]/div[3]/p", "xpath:idRelative"],
+        ["xpath=//div[3]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Close')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3a91cc1-e04d-4624-ba4e-e7c030cb9d2d",
+      "comment": "",
+      "command": "waitForElementNotVisible",
+      "target": "css=.modal",
+      "targets": [
+        ["css=.modal", "css:finder"],
+        ["xpath=//div[@id='modal']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]", "xpath:position"]
+      ],
+      "value": "1000"
+    }, {
+      "id": "7a120f1a-8e0e-4b5f-a882-3e59300c070c",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea5a0cff-e5a3-486f-8172-9fa0d51cef98",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Elemental Selenium",
+      "targets": [
+        ["linkText=Elemental Selenium", "linkText"],
+        ["css=.large-4 a", "css:finder"],
+        ["xpath=//a[contains(text(),'Elemental Selenium')]", "xpath:link"],
+        ["xpath=//div[@id='page-footer']/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://elementalselenium.com/']", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Elemental Selenium')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win7780",
+      "windowTimeout": 2000
+    }, {
+      "id": "9149c978-8b5a-4af7-8646-9e43099878f2",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win7780}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0e9b7c60-5eac-47ae-83aa-84cc504e70a9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=header",
+      "targets": [
+        ["css=header", "css:finder"],
+        ["xpath=//header", "xpath:position"]
+      ],
+      "value": "Elemental Selenium\\nA free, once-weekly e-mail on how to use Selenium like a Pro"
+    }]
+  }],
+  "suites": [{
+    "id": "5b30bba6-fe84-431c-b2b5-916457009386",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f0ec0de3-a50b-4170-9ede-b123369f64a0"]
+  }],
+  "urls": ["http://the-internet.herokuapp.com/"],
+  "plugins": []
+}
